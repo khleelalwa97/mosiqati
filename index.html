@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>متجـــــر موسيقاتـــــــــي</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<div class="nav-container">
+<div class="logo">موسيـ<span>قاتي</span></div>
+<ul class="nav-menu">
+<li>
+<a href="#" class="nav-link active" onclick="showSection('home', event)">
+<img src="main.png" alt="الرئيسية" class="nav-icon">
+<span>الرئيسية</span>
+</a>
+</li>
+<li>
+<a href="#" class="nav-link" onclick="showSection('store', event)">
+<img src="store.png" alt="المتجر" class="nav-icon">
+<span>المتجر</span>
+</a>
+</li>
+<li>
+<a href="#" class="nav-link" onclick="showSection('gifts', event)">
+<img src="gifts.png" alt="الهدايا" class="nav-icon">
+<span>الهدايا</span>
+</a>
+</li>
+<li>
+<a href="#" class="nav-link" onclick="showSection('offers', event)">
+<img src="ee.png" alt="العروض الخاصة" class="nav-icon">
+<span>العروض الخاصة</span>
+</a>
+</li>
+<li>
+<a href="#" class="nav-link" onclick="showSection('about', event)">
+<img src="way.png" alt="من نحن" class="nav-icon">
+<span>من نحن</span>
+</a>
+</li>
+<li>
+<a href="#" class="nav-link" onclick="showSection('blog', event)">
+<img src="pppp.png" alt="نصائح وإرشادات" class="nav-icon">
+<span>نصائح وإرشادات</span>
+</a>
+</li>
+<li>
+<a href="#" class="nav-link" onclick="showSection('contact', event)">
+<img src="call.png" alt="تواصل معنا" class="nav-icon">
+<span>تواصل معنا</span>
+</a>
+</li>
+<li>
+<a href="#" class="nav-link" onclick="showSection('cart', event)">
+<div class="cart-icon-wrapper">
+<img src="cart.png" alt="السلة" class="nav-icon">
+<span class="cart-count">0</span>
+</div>
+<span>السلة</span>
+</a>
+</li>
+</ul>
+</div>
+</header>
+<div class="container">
+<section id="home" class="page-section active-section" style="text-align: center; padding: 60px 0;">
+<h1 style="font-size: 45px; margin-bottom: 20px;">مرحباً بكم في <span style="color: #ff0000;">موسيقاتي</span></h1>
+<p style="font-size: 18px; max-width: 800px; margin: 0 auto 40px auto; color: #ccc; line-height: 1.8;">
+الوجهة الأولى والقرية المتكاملة لعشاق ومحترفي الموسيقى في الأردن. نجمع لك أعرق الآلات الشرقية والغربية وأحدث معدات الصوت تحت سقف واحد لتصنع نغمتك الخاصة بروح جديدة.
+</p>
+<button class="btn-add" style="width: auto; padding: 15px 40px; font-size: 18px;" onclick="showSection('store', event)">تصفح متجر موسيقاتي</button>
+</section>
+<section id="store" class="page-section">
+<div class="promo-banner">
+<div class="image-placeholder-text" style="position:static; padding:20px;"> العرض الترويجي لموسيقاتي (promo.gif)</div>
+<img src="promo.GIF" alt="العرض الترويجي لموسيقاتي" onerror="this.style.display='none'">
+</div>
+<h2>قسم الجيتارات الاحترافية</h2>
+<p style="color: #aaa; margin-bottom: 20px;">اختر البراند المفضل لديك لعرض الأنواع المتوفرة والأسعار:</p> 
+<div class="filter-container">
+<button class="btn-filter active" onclick="filterBrand('all', event)">كل البراندات</button>
+<button class="btn-filter" onclick="filterBrand('Fender', event)">Fender</button>
+<button class="btn-filter" onclick="filterBrand('Gibson', event)">Gibson</button>
+<button class="btn-filter" onclick="filterBrand('Ibanez', event)">Ibanez</button>
+<button class="btn-filter" onclick="filterBrand('PRS', event)">PRS</button>
+<button class="btn-filter" onclick="filterBrand('Yamaha', event)">Yamaha</button>
+</div>
+<div id="store-products-grid" class="products-grid"></div>
+</section>
+<section id="gifts" class="page-section">
+<h2>قسم الهدايا</h2>
+<p style="color: #aaa; margin-bottom: 30px;">احصل على مكافآت وهدايا استثنائية تُضاف لطلبك تلقائياً بناءً على قيمة سلتك!</p>        
+<div id="gifts-status-container"></div>
+</section>
+<section id="offers" class="page-section">
+<h2>عروض وباقات حصرية لفترة محدودة</h2><div class="products-grid"><div class="product-card" style="border-color: #ff0000; background-color: #251212;">
+<div class="product-image-wrapper">
+<div class="image-placeholder-text"></div>
+<img src="810zC8+VpUL._AC_SL400_.jpg" alt="باقة جيتار" onerror="handleMissingImage(this)">
+</div>
+<h3>جيتار Fender مع حقيبة احترافية</h3>
+<div class="product-brand">باقة التوفير</div>
+<div class="product-price"><del style="color:#777; font-size:14px; margin-left:10px;">1100 دينار</del> 995 دينار</div>
+<button class="btn-add" onclick="addToCart('o1', 'باقة جيتار Fender مع حقيبة', 995)">إضافة إلى السلة</button>
+</div>
+</div>
+</section>
+<section id="about" class="page-section" style="line-height: 1.8;">
+<h2>قصة متجر موسيقاتي</h2>
+<div style="background-color: #1e1e1e; padding: 30px; border-radius: 8px; margin-top: 20px; border-right: 4px solid #ff0000;">
+<p style="font-size: 16px; margin-bottom: 20px;">
+تأسس متجر موسيقاتي في المملكة الأردنية الهاشمية ليكون صرحا متكاملا يدعم الثقافة الموسيقية بكافة أشكالها. نحن لسنا مجرد متجر تجاري، بل نحن شغوفون بتقديم أفضل الآلات التي تساعد المبدعين على إطلاق ألحانهم.
+</p>
+<h3 style="color: #ff0000; margin-bottom: 10px;">إدارة وتوجيه احترافي</h3>
+<p>
+تحت القيادة الحكيمة لمدير المتجر الأستاذ فادي يسعى فريقنا المتخصص والمكون من خبراء وموسيقيين محترفين إلى فحص واختيار كل آلة بدقة وعناية لضمان أعلى مستويات الجودة والنقاء الصوتي قبل وصولها إليكم.
+</p>
+</div>
+</section>
+<!-- قسم المدونة التعليمية -->
+<section id="blog" class="page-section">
+<h2>مدونة موسيقاتي التعليمية</h2>
+<p style="color: #aaa; margin-bottom: 30px;">نصائح من خبراء الموسيقى للعناية بآلتك وتطوير مهاراتك</p>
+<div class="products-grid">
+<div class="product-card" onclick="openArticle('guitar-strings')" style="text-align: right; min-height: auto; cursor: pointer;">
+<h3 style="color: #ff0000;">كيف تحافظ على أوتار الجيتار؟</h3>
+<p style="font-size: 14px; color: #ccc; margin-bottom: 15px;">تعرف على أفضل الطرق لتنظيف وحفظ الجيتار بعد العزف لحمايته من الرطوبة وعوامل التآكل الطبيعية.</p>
+<span style="font-size: 12px; color: #777;">وقت القراءة: 3 دقائق</span>
+</div>
+</div>
+</section>
+<section id="contact" class="page-section">
+<h2>تواصل معنا</h2>
+<p style="color: #aaa; margin-bottom: 30px;">يسعدنا دائماً الإجابة على استفساراتكم</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+<form onsubmit="sendContactToWhatsApp(event)">
+<label>الاسم الكامل</label>
+<input type="text" id="contact-name" class="input-field" required placeholder="أدخل اسمك هنا"> 
+<label>البريد الإلكتروني</label>
+<input type="email" id="contact-email" class="input-field" required placeholder="name@example.com"> 
+<label>نص الرسالة</label>
+<textarea id="contact-message" class="input-field" rows="5" required placeholder="اكتب استفسارك هنا..."></textarea>
+<button type="submit" class="btn-add">إرسال الرسالة عبر الواتساب 💬</button>
+</form>
+<div style="background-color: #1e1e1e; padding: 25px; border-radius: 8px; border: 1px solid #333;">
+<h3 style="margin-bottom: 15px;">قنوات التواصل الاجتماعي</h3>
+<p style="margin-bottom: 10px;">تابع حساباتنا الرسمية لتبقى على اطلاع بجديدنا:</p>
+<p style="margin-bottom: 8px;">📱 فيسبوك: <a href="#" style="color: #ff0000; text-decoration: none;">Mosiqati.Jo</a></p>
+<p style="margin-bottom: 8px;">📸 إنستغرام: <a href="#" style="color: #ff0000; text-decoration: none;">@Mosiqati_Store</a></p>
+<p>📍 الموقع: عمان، الأردن</p>
+</div>
+</div>
+</section>   
+<section id="cart" class="page-section">
+<h2>سلة المشتريات الخاصة بك</h2>
+<div id="cart-items-container" style="background-color: #1e1e1e; border-radius: 8px; margin-top: 20px; border: 1px solid #333;"></div>
+<div style="margin-top: 30px; text-align: left; background-color: #000; padding: 20px; border-radius: 8px; border: 1px solid #ff0000; display: inline-block; float: left; min-width: 300px;">
+<h3 style="margin-bottom: 10px;">المجموع الإجمالي: <span id="cart-total-price" style="color: #ff0000;">0 دينار</span></h3>
+<button class="btn-add" onclick="checkoutWhatsApp()" style="margin-top: 15px;">إتمام الطلب عبر الواتساب 💬</button>
+</div>
+<div style="clear: both;"></div>
+</section>
+</div>
+<div id="article-modal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.85); align-items: center; justify-content: center;">
+<div style="background-color: #1e1e1e; border: 1px solid #ff0000; padding: 30px; width: 90%; max-width: 600px; border-radius: 8px; color: #fff; direction: rtl; position: relative; box-shadow: 0 4px 20px rgba(255, 0, 0, 0.2); line-height: 1.8;">
+<span onclick="closeArticle()" style="position: absolute; top: 10px; left: 20px; color: #ff0000; font-size: 35px; font-weight: bold; cursor: pointer;">&times;</span>
+<div id="modal-body-content"></div>
+</div>
+</div>
+<footer>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
